@@ -1,4 +1,5 @@
 const printCharacters = () => {
+    const moreDetails = [...document.getElementsByClassName("card__button")];
     main.innerHTML = `
         <div class="main__header">
             <h3 class="main__title">CHARACTERS FINDER</h3>
@@ -15,6 +16,8 @@ const printCharacters = () => {
             printCardCharacters(element);
         });
     });
+
+    printCharacterDetails(moreDetails);
 }
 
 const getCharacters = async () => {
@@ -43,13 +46,12 @@ const mapDataCharacter = (data) => {
 }
 
 const printCardCharacters = (character) => {
-    console.log(character);
     let mainCards = document.getElementsByClassName("main__cards")[0];
     mainCards.innerHTML = mainCards.innerHTML + `
         <div class="card">
             <div class="card__header">
                 <h3 class="card__name">${character.name}</h3>
-                <div class="card__status">${character.status}</div>
+                <div class="card__status ${changeStatus(character.status)}">${character.status}</div>
             </div>
         <div class="card__box">
             <img class="card__img" src="${character.image}" alt="img">
@@ -72,6 +74,15 @@ const printCardCharacters = (character) => {
                 </div>
             </div>
         </div>
-        <button class="card__button">+ MORE DETAILS</button>
+        <button class="card__button" name="${character.datails}">+ MORE DETAILS</button>
     `;
+}
+
+const changeStatus = (status) => {
+    if  (status === "Alive"){
+        return "card__status--alive";
+    }else if (status === "Dead"){
+        return "card__status--dead";
+    }
+    return "card__status--unknown";
 }

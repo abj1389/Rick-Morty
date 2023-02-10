@@ -1,0 +1,53 @@
+.header{
+    height: 50px;
+    background-color: $color3;
+    text-align: center;
+    color: $color4;
+    padding: 12px 0 52px 0;
+
+    @include adaptTo("desktop-xl"){
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+
+    &--home{
+        background-image: url("../../assets/images/home-img.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+
+        @include adaptTo("desktop-xl"){
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .header__title{
+            font-size: 36px;
+            width: 100%;
+            padding-top: 120px;
+
+            @include adaptTo("tablet"){
+                font-size: 45px;
+            }
+        }
+
+        .header__subtitle{
+            font-size: 28px;
+    
+            @include adaptTo("tablet"){
+                font-size: 33px;
+            }
+        }
+    }
+
+    &__title{
+        font-size: 16px;
+        text-decoration: underline;
+    }
+
+    &__subtitle{
+        font-size: 12px;
+        font-weight: bold;
+    }
+}

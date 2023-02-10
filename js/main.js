@@ -1,4 +1,5 @@
 const URL_BASE = "https://rickandmortyapi.com/api/";
+const main = document.getElementsByClassName("main")[0];
 
 window.onload = () => {
     printPage("HOME");

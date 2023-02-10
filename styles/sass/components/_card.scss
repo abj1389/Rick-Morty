@@ -1,0 +1,96 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 25px auto;
+    background-color: $color4;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 15px 0 15px;
+    }
+
+    &__name{
+        font-size: 14px;
+        font-weight: bold;
+        color: $color3;
+    }
+
+    &__status{
+        width: 70px;
+        height: 20px;
+        font-size: 10px;
+        font-weight: bold;
+        color: $color4;
+
+        &--alive{
+            background-color: $color6;
+        }
+
+        &--dead{
+            background-color: $color14;
+        }
+
+        &--unknown{
+            background-color: $color13;
+        }
+    }
+
+    &__box{
+        display: flex;
+        margin: 15px;
+    }
+
+    &__img{
+        width: 135px;
+        margin-right: 15px;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: justify;
+    }
+
+    &__title{
+        font-size: 10px;
+        font-weight: bold;
+        color: $color1;
+    }
+
+    &__subtitle{
+        font-size: 14px;
+        color: $color2;
+    }
+
+    &__button{
+        color: $color3;
+        font-weight: bold;
+        font-size: 12px;
+        margin: 0 15px 15px 15px;
+        background-color: $color5;
+        border: none;
+        border-radius: 50px;
+    }
+
+    @include adaptTo("tablet"){
+        width: 350px;
+    }
+
+    @include adaptTo("desktop-m"){
+        width: 320px;
+    }
+
+    @include adaptTo("desktop-l"){
+        width: 400px;
+    }
+
+    @include adaptTo("desktop-xl"){
+        width: 400px;
+        margin: 25px 0;
+    }
+}

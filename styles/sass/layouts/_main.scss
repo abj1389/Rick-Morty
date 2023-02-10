@@ -1,0 +1,137 @@
+.main{
+    text-align: center;
+
+    &__text{
+        margin: 0 auto;
+        max-width: 280px;
+
+        @include adaptTo("not-mobile"){
+            max-width: 400px;
+        }
+    }
+
+    &__header{
+        width: 100vw;
+        height: 35px;
+        background-color: $color9;
+        color: $color3;
+        padding: 12px 0 42px 0;
+
+        @include adaptTo("desktop-xl"){
+            max-width: 1320px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin: 0 auto;
+        }
+    }
+
+    &__title{
+        font-weight: bold;
+    }
+
+    &__container{
+        font-size: 16px;
+        width: 100%;
+        max-width: 400px;
+        padding-bottom: 50px;
+        margin: 60px auto;
+
+        @include adaptTo("not-mobile"){
+            font-size: 20px;
+        }
+    }
+
+    &__separator{
+        width: 125px;
+        height: 1px;
+        background-color: $color15;
+        margin: 25px auto 0 auto;
+    }
+
+    &__links{
+        @include adaptTo("desktop-m"){
+            display: flex;
+            height: 300px;
+            background-color: $color16;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        @include adaptTo("desktop-l"){
+            display: flex;
+            height: 300px;
+            background-color: $color16;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        @include adaptTo("desktop-xl"){
+            display: flex;
+            max-width: 1320px;
+            border-radius: 20px;
+            height: 300px;
+            background-color: $color16;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 auto;
+        }
+    }
+
+    &__link{
+        width: 100%;
+        max-width: 280px;
+        background-color: $color5;
+        color: $color16;
+        font-weight: bold;
+        font-size: 24px;
+        padding: 65px 0;
+        border-radius: 100px;
+        display: block;
+        margin: 0 auto 55px auto;
+
+        @include adaptTo("tablet"){
+            max-width: 500px;
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 0 auto;
+            max-width: 280px;
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 auto;
+            max-width: 350px;
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 auto;
+            max-width: 350px;
+        }
+
+    }
+
+    &__cards{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1320px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    
+    &__button{
+        width: 120px;
+        height: 30px;
+        background-color: $color3;
+        border-radius: 25px;
+        margin: 40px auto 65px auto;
+        font-size: 16px;
+        font-weight: bold;
+        color: $color4;
+        border: none;
+
+        @include adaptTo("not-mobile"){
+            width: 150px;
+            height: 40px;
+        }
+    }
+}

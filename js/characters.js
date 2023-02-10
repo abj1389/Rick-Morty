@@ -1,5 +1,4 @@
 const printCharacters = () => {
-    const moreDetails = [...document.getElementsByClassName("card__button")];
     main.innerHTML = `
         <div class="main__header">
             <h3 class="main__title">CHARACTERS FINDER</h3>
@@ -9,15 +8,21 @@ const printCharacters = () => {
         </div>
         <button class="main__button" type="submit">+ MORE</button>
     `;
-
     getCharacters().then(response => {
        
         response.forEach(element => {
             printCardCharacters(element);
         });
-    });
 
-    printCharacterDetails(moreDetails);
+
+    let moreDetails = [...document.getElementsByClassName("card__button")];
+    console.log(moreDetails);
+    moreDetails.forEach((element, i) => {
+        element.addEventListener('click', () => { 
+            printPage("PERSONAJES", element.name);
+        })
+    })
+    });
 }
 
 const getCharacters = async () => {
@@ -38,7 +43,7 @@ const mapDataCharacter = (data) => {
             origin: character.origin,
             location: character.location,
             image: character.image,
-            datails: character.url
+            datails: character.url,
         }
         return object;
     });
@@ -74,8 +79,9 @@ const printCardCharacters = (character) => {
                 </div>
             </div>
         </div>
-        <button class="card__button" name="${character.datails}">+ MORE DETAILS</button>
+        <button class="card__button" type="submit" name="${character.datails}">+ MORE DETAILS</button>
     `;
+
 }
 
 const changeStatus = (status) => {

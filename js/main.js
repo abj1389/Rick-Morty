@@ -2,18 +2,17 @@ const URL_BASE = "https://rickandmortyapi.com/api/";
 const main = document.getElementsByClassName("main")[0];
 
 window.onload = () => {
-    printPage("HOME");
+    printPage("PERSONAJES", "https://rickandmortyapi.com/api/character/1");
 }
 
-const printPage = (section) => {
+const printPage = (section, url) => {
     adaptHeader(section);
     switch (section) {
         case "HOME":
             printHome();
             break;
         case "PERSONAJES":
-            console.log("He pulsado personajes");
-            printCharacters();
+            (url) ? printCharacterDetails(url) : printCharacters();
             break;
         case "TEMPORADAS":
             console.log("He pulsado temporadas");

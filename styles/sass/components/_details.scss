@@ -1,5 +1,45 @@
 .details{
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    &__header{
+
+        @include adaptTo("tablet"){
+            margin: 40px;
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 70px 50px 70px 50px;
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 120px 90px 120px 45px;
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 120px 90px 120px 45px;
+        }
+    }
+
+    @include adaptTo("not-mobile"){
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    @include adaptTo("desktop-l"){
+        max-width: 1024px;
+        background-color: $color4;
+        margin: 60px auto;
+        box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    }
+
+    @include adaptTo("desktop-xl"){
+        max-width: 1024px;
+        background-color: $color4;
+        margin: 60px auto;
+        box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    }
 
     &__img{
         width: 200px;
@@ -20,31 +60,175 @@
         margin-top: 30px;
         display: flex;
         flex-direction: column;
+
+        @include adaptTo("tablet"){
+            background-color: $color4;
+            margin: 0;
+            padding: 40px 30px 0 30px;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-m"){
+            background-color: $color4;
+            margin: 0 0 70px 0;
+            padding: 70px 30px 0 30px;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 0 120px 0;
+            padding: 120px 30px 0 30px;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 0 120px 0;
+            padding: 120px 30px 0 30px;
+            width: 100%;
+        }
     }
 
     &__status{
         width: 280px;
         margin: 0 auto 20px auto;
+
+        @include adaptTo("tablet"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
     }
 
     &__species{
         width: 280px;
         margin: 0 auto 20px auto;
+
+        @include adaptTo("tablet"){
+            margin: 0 0 20px 0; 
+            width: 100%;       
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
     }
 
     &__origin{
         width: 280px;
         margin: 0 auto 20px auto;
+
+        @include adaptTo("tablet"){
+            margin: 0 0 20px 0;
+            width: 100%;        
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
     }
 
     &__location{
         width: 280px;
         margin: 0 auto 20px auto;
+
+        @include adaptTo("tablet"){
+            margin: 0 0 20px 0;
+            width: 100%;      
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 30px 20px 0;
+            width: calc(33% - 30px);
+        }
+    }
+
+    &__data{
+
+        @include adaptTo("desktop-m"){
+            display: flex;
+            flex-direction: row;
+        }
+        
+        @include adaptTo("desktop-l"){
+            display: flex;
+            flex-direction: row;
+        }
+
+        @include adaptTo("desktop-xl"){
+            display: flex;
+            flex-direction: row;
+        } 
     }
 
     &__episodes{
         width: 280px;
         margin: 0 auto 20px auto;
+
+        @include adaptTo("tablet"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-m"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-l"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+
+        @include adaptTo("desktop-xl"){
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
     }
 
     &__title{
@@ -96,6 +280,26 @@
 
         &--unknown{
             background-color: $color13;
+        }
+
+        @include adaptTo("tablet"){
+            justify-content: flex-start;
+            margin: 0 10px 0 0;
+        }
+
+        @include adaptTo("desktop-m"){
+            justify-content: flex-start;
+            margin: 0 10px 0 0;
+        }
+
+        @include adaptTo("desktop-l"){
+            justify-content: flex-start;
+            margin: 0 10px 0 0;
+        }
+
+        @include adaptTo("desktop-xl"){
+            justify-content: flex-start;
+            margin: 0 10px 0 0;
         }
     }
 

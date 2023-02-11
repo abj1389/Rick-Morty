@@ -1,5 +1,4 @@
 const printCharacterDetails = (url) => {
-    console.log(url);
     main.innerHTML = `
         <div class="main__header">
             <h3 class="main__title">CHARACTER DETAILS</h3>
@@ -42,8 +41,10 @@ const formatDataCharacter= (data) => {
 const printCharacterCardDetails = (char) => {
     const mainChar = document.getElementsByClassName("details")[0];
     mainChar.innerHTML = `
-        <img class="details__img" src="${char.image}" alt="">
-        <h2 class="details__name">${char.name.toUpperCase()}</h2>
+        <div class="details__header">
+            <img class="details__img" src="${char.image}" alt="">
+            <h2 class="details__name">${char.name.toUpperCase()}</h2>
+        </div>
         <div class="details__container">
             <div class="details__status">
                 <p class="details__title">STATUS</p>
@@ -51,17 +52,19 @@ const printCharacterCardDetails = (char) => {
                     ${typeOfStatus(char.status.toUpperCase())}
                 </div>
             </div>
-            <div class="details__species">
-                <p class="details__title">SPECIES</p>
-                <p class="details__info">${char.species}</p>
-            </div>
-            <div class="details__origin">
-                <p class="details__title">ORIGIN</p>
-                <p class="details__info">${char.origin}</p>
-            </div>
-            <div class="details__location">
-                <p class="details__title">LOCATION</p>
-                <p class="details__location-info">${char.location}</p>
+            <div class="details__data">
+                <div class="details__species">
+                    <p class="details__title">SPECIES</p>
+                    <p class="details__info">${char.species}</p>
+                </div>
+                <div class="details__origin">
+                    <p class="details__title">ORIGIN</p>
+                    <p class="details__info">${char.origin}</p>
+                </div>
+                <div class="details__location">
+                    <p class="details__title">LOCATION</p>
+                    <p class="details__location-info">${char.location}</p>
+                </div>
             </div>
             <div class="details__episodes">
                 <p class="details__title">EPISODE</p>

@@ -16,7 +16,6 @@ const printCharacters = () => {
 
 
     let moreDetails = [...document.getElementsByClassName("card__button")];
-    console.log(moreDetails);
     moreDetails.forEach((element, i) => {
         element.addEventListener('click', () => { 
             printPage("PERSONAJES", element.name);

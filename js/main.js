@@ -2,7 +2,8 @@ const URL_BASE = "https://rickandmortyapi.com/api/";
 const main = document.getElementsByClassName("main")[0];
 
 window.onload = () => {
-    printPage("PERSONAJES", "https://rickandmortyapi.com/api/character/1");
+    printPage("HOME");
+    // url de prueba detalles character: https://rickandmortyapi.com/api/character/1
 }
 
 const printPage = (section, url) => {

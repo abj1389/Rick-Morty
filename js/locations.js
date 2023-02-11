@@ -11,8 +11,7 @@ const printLocations = () => {
     getLocations().then(response => {
        
         response.forEach(element => {
-            console.log(element);
-            //printCardLocations(element);
+            printCardLocations(element);
         });
 
 
@@ -46,36 +45,25 @@ const mapDataLocation = (data) => {
     return dataMapped;
 }
 
-/*const printCardCharacters = (character) => {
+const printCardLocations = (location) => {
     let mainCards = document.getElementsByClassName("main__cards")[0];
     mainCards.innerHTML = mainCards.innerHTML + `
         <div class="card">
-            <div class="card__header">
-                <h3 class="card__name">${character.name}</h3>
-                <div class="card__status ${changeStatus(character.status)}">${character.status}</div>
-            </div>
-        <div class="card__box">
-            <img class="card__img" src="${character.image}" alt="img">
-            <div class="card__info">
-                <div class="card__text">
-                    <h3 class="card__title">SPECIES</h3>
-                    <h4 class="card__subtitle">${character.species}</h4>
-                </div>
-                <div class="card__text">
-                    <h3 class="card__title">GENDER</h3>
-                    <h4 class="card__subtitle">${character.gender}</h4>
-                </div>
-                <div class="card__text">
-                    <h3 class="card__title">ORIGIN</h3>
-                    <h4 class="card__subtitle">${character.origin.name}</h4>
-                </div>
-                <div class="card__text">
-                    <h3 class="card__title">LOCATION</h3>
-                    <h4 class="card__subtitle">${character.location.name}</h4>
+            <h3 class="card__name">${location.name}</h3>
+            <div class="card__box">
+                <div class="card__info">
+                    <div class="card__text">
+                        <h3 class="card__title">TYPE</h3>
+                        <h4 class="card__subtitle">${location.type}</h4>
+                    </div>
+                    <div class="card__text">
+                        <h3 class="card__title">DIMENSION</h3>
+                        <h4 class="card__subtitle">${location.dimension}</h4>
+                    </div>
                 </div>
             </div>
+            <button class="card__button" type="submit" name="${location.url}">+ MORE DETAILS</button>
         </div>
-        <button class="card__button" type="submit" name="${character.datails}">+ MORE DETAILS</button>
     `;
 
-}*/
+}

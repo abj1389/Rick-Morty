@@ -1,6 +1,5 @@
 const URL_BASE = "https://rickandmortyapi.com/api/";
 const main = document.getElementsByClassName("main")[0];
-const home = document.getElementsByClassName("header")[0];
 
 window.onload = () => {
     printPage("HOME");
@@ -22,7 +21,7 @@ const printPage = (section, url) => {
             printEpisodes();
             break;
         case "LOCALIZACIONES":
-            printLocations();
+            (url) ? printLocationDetails(url) : printLocations();
             console.log("He pulsado localizaciones");
             break;
         default:
@@ -36,6 +35,7 @@ const adaptHeader = page => (page === "HOME")
  document.getElementsByClassName("header")[0].classList.remove("header--home");
 
  const backHome = () => {
+    const home = document.getElementsByClassName("header")[0];
     home.addEventListener("click", () => {
         printPage("HOME");
     });

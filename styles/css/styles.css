@@ -710,4 +710,8 @@
 
 body {
   background-color: #F9F9F9;
+}
+
+.header:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

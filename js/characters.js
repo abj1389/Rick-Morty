@@ -57,28 +57,29 @@ const printCardCharacters = (character) => {
                 <h3 class="card__name">${character.name}</h3>
                 <div class="card__status ${changeStatus(character.status)}">${character.status}</div>
             </div>
-        <div class="card__box">
-            <img class="card__img" src="${character.image}" alt="img">
-            <div class="card__info">
-                <div class="card__text">
-                    <h3 class="card__title">SPECIES</h3>
-                    <h4 class="card__subtitle">${character.species}</h4>
-                </div>
-                <div class="card__text">
-                    <h3 class="card__title">GENDER</h3>
-                    <h4 class="card__subtitle">${character.gender}</h4>
-                </div>
-                <div class="card__text">
-                    <h3 class="card__title">ORIGIN</h3>
-                    <h4 class="card__subtitle">${character.origin.name}</h4>
-                </div>
-                <div class="card__text">
-                    <h3 class="card__title">LOCATION</h3>
-                    <h4 class="card__subtitle">${character.location.name}</h4>
+            <div class="card__box">
+                <img class="card__img" src="${character.image}" alt="img">
+                <div class="card__info">
+                    <div class="card__text">
+                        <h3 class="card__title">SPECIES</h3>
+                        <h4 class="card__subtitle">${character.species}</h4>
+                    </div>
+                    <div class="card__text">
+                        <h3 class="card__title">GENDER</h3>
+                        <h4 class="card__subtitle">${character.gender}</h4>
+                    </div>
+                    <div class="card__text">
+                        <h3 class="card__title">ORIGIN</h3>
+                        <h4 class="card__subtitle">${character.origin.name}</h4>
+                    </div>
+                    <div class="card__text">
+                        <h3 class="card__title">LOCATION</h3>
+                        <h4 class="card__subtitle">${character.location.name}</h4>
+                    </div>
                 </div>
             </div>
+            <button class="card__button" type="submit" name="${character.datails}">+ MORE DETAILS</button>
         </div>
-        <button class="card__button" type="submit" name="${character.datails}">+ MORE DETAILS</button>
     `;
 
 }

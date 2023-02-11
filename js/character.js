@@ -16,13 +16,10 @@ const getMoreDetails = async (url) => {
     let response = await fetch(url);
     let data = await response.json();
     data = formatDataCharacter(data);
-
     return data;
 }
 
 const formatDataCharacter= (data) => {
-
-
     let dataFormated = {
         image: data.image,
         name: data.name.toUpperCase(),
@@ -34,7 +31,6 @@ const formatDataCharacter= (data) => {
         episode:  data.episode.map( element =>  element.replace("https://rickandmortyapi.com/api/episode/", '')),
         episodeUrl: data.episode
     }
-
     return dataFormated;
 }
 

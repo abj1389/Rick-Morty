@@ -16,11 +16,11 @@ const printLocations = () => {
 
 
     let moreDetails = [...document.getElementsByClassName("card__button")];
-    moreDetails.forEach((element, i) => {
-        element.addEventListener('click', () => { 
-            printPage("LOCALIZACIONES", element.name);
-        })
-    })
+        moreDetails.forEach((element, i) => {
+            element.addEventListener('click', () => { 
+                printPage("LOCALIZACIONES", element.name);
+            });
+        });
     });
 }
 

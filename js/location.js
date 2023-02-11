@@ -9,7 +9,9 @@ const printLocationDetails = (url) => {
     `;
     getMoreLocationDetails(url).then(response => {
         printLocationCardDetails(response);
+        getCharacterDetails([...document.getElementsByClassName("details__residents")], response.residents.map(element => element.urlChar));
     });
+    
 }
 
 const getMoreLocationDetails = async (url) => {
@@ -24,7 +26,12 @@ const formatDataLocation = (data) => {
         name: data.name,
         type: data.type,
         dimension: data.dimension,
-        residents: getImage(data.residents),
+        residents: data.residents.map(element => {
+            return { 
+                urlChar: element, 
+                urlImg: element.replace("character/", "character/avatar/") + ".jpeg" 
+           }    
+        }),
         url: data.url
     }
     return dataFormated;
@@ -32,7 +39,6 @@ const formatDataLocation = (data) => {
 
 const printLocationCardDetails = (location) => {
     const mainLocation = document.getElementsByClassName("details")[0];
-    console.log(location.residents);
     mainLocation.innerHTML = `
         <h3 class="details__name">${location.name}</h3>
         <div class="details__container">
@@ -48,21 +54,18 @@ const printLocationCardDetails = (location) => {
             </div>
             <div class="details__episodes">
                 <p class="details__title">RESIDENTS</p>
-                <img class="details__numbers" src="${location.residents}" alt="image">
+                <div class="details__numbers">
+                    ${location.residents.map(element => `<img class="details__residents" src="${element.urlImg}" alt="image">`).join('')}
+                </div>
             </div>
         </div>
     `;
 }
 
-const getImage = (residents) => {
-    residents.forEach(element => {
-        getFormatedImage(element).then(response => response);
+const getCharacterDetails = (residents, url) => {
+    residents.forEach((element,i) => {
+        element.addEventListener("click", () => {
+            printCharacterDetails(url[i]);
+        });
     });
-}
-
-const getFormatedImage = async (url) => {
-    let response = await fetch(url);
-    let data = await response.json();
-    data = formatDataCharacter(data);
-    return data;
 }

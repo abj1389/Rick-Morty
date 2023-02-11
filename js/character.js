@@ -9,6 +9,7 @@ const printCharacterDetails = (url) => {
     `;
     getMoreDetails(url).then(response => {
         printCharacterCardDetails(response);
+        getLocationDetails(document.getElementsByClassName("details__location-info")[0], response.locationUrl);
     });
 }
 
@@ -91,4 +92,10 @@ const typeOfStatus = (status) => {
                     <p class="details__options details__options--normal">DEAD</p>
                     <p class="details__options details__options--normal">UNKNOWN</p>`;
     }
+}
+
+const getLocationDetails = (location, url) => {
+    location.addEventListener("click", () => {
+        printLocationDetails(url);
+    });
 }

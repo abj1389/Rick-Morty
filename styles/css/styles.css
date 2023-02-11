@@ -707,6 +707,13 @@
   border-radius: 20px;
   margin: 5px 8px 5px 8px;
 }
+.details__residents {
+  width: 90px;
+  height: 90px;
+  border: 2px solid #BEA1C7;
+  border-radius: 100px;
+  margin: 0 auto 15px auto;
+}
 
 body {
   background-color: #F9F9F9;

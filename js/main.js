@@ -4,7 +4,7 @@ const main = document.getElementsByClassName("main")[0];
 window.onload = () => {
     printPage("HOME");
     backHome();
-    // url de prueba detalles character: https://rickandmortyapi.com/api/character/1
+    // url de prueba detalles: https://rickandmortyapi.com/api/location/1
 }
 
 const printPage = (section, url) => {

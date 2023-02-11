@@ -317,4 +317,12 @@
         border-radius: 20px;
         margin: 5px 8px 5px 8px;
     }
+
+    &__residents{
+        width: 90px;
+        height: 90px;
+        border: 2px solid $color9;
+        border-radius: 100px;
+        margin: 0 auto 15px auto;
+    }
 }

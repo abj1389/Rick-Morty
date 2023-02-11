@@ -25,7 +25,7 @@ const printEpisodes = () => {
 }
 
 const getEpisodes = async () => {
-    let url = URL_BASE + "/episodes";
+    let url = URL_BASE + "/episode";
     let response = await fetch(url);
     let data = await response.json();
     data = mapDataEpisode(data.results);
@@ -37,32 +37,35 @@ const mapDataEpisode = (data) => {
         let object = {
             name: episode.name,
             date: episode.air_date,
-            season: episode.episode,
+            season: episode.episode.splice(0,3),
             url: episode.url,
         }
         return object;
     });
+
+    for (let i = 0; i < object.length; i++) {
+        
+        
+    }
+
     return dataMapped;
 }
 
-const printCardLocations = (location) => {
+const printCardEpisodes = (episode) => {
     let mainCards = document.getElementsByClassName("main__cards")[0];
     mainCards.innerHTML = mainCards.innerHTML + `
         <div class="card">
-            <h3 class="card__name">${location.name}</h3>
+            <h3 class="card__name">${episode.season}</h3>
             <div class="card__box">
                 <div class="card__info">
                     <div class="card__text">
-                        <h3 class="card__title">TYPE</h3>
-                        <h4 class="card__subtitle">${location.type}</h4>
-                    </div>
-                    <div class="card__text">
-                        <h3 class="card__title">DIMENSION</h3>
-                        <h4 class="card__subtitle">${location.dimension}</h4>
+                        <h3 class="card__title">DATE</h3>
+                        <h4 class="card__subtitle">${episode.date}</h4>
                     </div>
                 </div>
             </div>
-            <button class="card__button" type="submit" name="${location.url}">+ MORE DETAILS</button>
+            <button class="card__button" type="submit" name="${episode.url}">${episode.name}</button>
         </div>
     `;
 }
+

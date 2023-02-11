@@ -1,8 +1,10 @@
 const URL_BASE = "https://rickandmortyapi.com/api/";
 const main = document.getElementsByClassName("main")[0];
+const home = document.getElementsByClassName("header")[0];
 
 window.onload = () => {
     printPage("HOME");
+    backHome();
     // url de prueba detalles character: https://rickandmortyapi.com/api/character/1
 }
 
@@ -32,3 +34,9 @@ const printPage = (section, url) => {
 const adaptHeader = page => (page === "HOME") 
 ? document.getElementsByClassName("header")[0].classList.add("header--home") :
  document.getElementsByClassName("header")[0].classList.remove("header--home");
+
+ const backHome = () => {
+    home.addEventListener("click", () => {
+        printPage("HOME");
+    });
+ }
